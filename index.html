@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milan Vojnovic | LSE Statistics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="main">
 
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <img class="av" src="Milan-2985.jpg" alt="Milan Vojnovic" />
+        <div class="sb-name">Milan Vojnovic</div>
+        <div class="sb-role">Professor of Data Science</div>
+        <div class="sb-role">Head of Department</div>
+        <div class="sb-sub">Department of Statistics, LSE</div>
+        <ul class="sb-links">
+          <li><a href="about.html">Short bio</a></li>
+          <li><a href="CV-MV.pdf">Curriculum vitae</a></li>
+          <li><a href="https://scholar.google.co.uk/citations?user=z4JhSBwAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
+          <li><a href="https://www.lse.ac.uk/people/milan-vojnovic" target="_blank">LSE profile</a></li>
+        </ul>
+        <div class="contact">
+          Columbia House, Office 8.04<br>
+          Houghton Street<br>
+          London WC2A 2AE<br>
+          <br>
+          <a href="mailto:m.vojnovic@lse.ac.uk">m.vojnovic@lse.ac.uk</a>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+
+        <!-- BIO -->
+        <section class="section">
+          <p class="bio">I am Professor of Data Science and Head of the <a href="https://www.lse.ac.uk/statistics">Department of Statistics</a> at the London School of Economics. My research is in machine learning, with an emphasis on the design and analysis of algorithms for sequential decision-making, learning under uncertainty, and optimisation.</p>
+          <p class="bio">Much of this work is motivated by questions that arise in AI systems: how to learn reliably from structured or limited feedback, how to align learning objectives with human preference, and how to scale optimisation to large models. Earlier contributions to gradient compression for distributed training (QSGD, NeurIPS 2017) and to ranking and inference from pairwise comparisons connect directly to the challenges of training and aligning modern language models. Current work examines alignment objectives in post-training (GRPO), bandit and active learning algorithms, and scalable calibration methods deployed at web scale.</p>
+          <p class="bio">I am a Visiting Scientist at Meta (Central Applied Science) and a Faculty Affiliate of the LSE Data Science Institute. I am happy to discuss potential collaborations.</p>
+        </section>
+
+        <!-- PAPERS -->
+        <section class="section">
+          <h2>Selected papers</h2>
+
+          <div class="paper">
+            <div class="p-title"><a href="https://arxiv.org/abs/2502.18548">What is the Alignment Objective of GRPO?</a></div>
+            <div class="p-authors">Vojnović M. and Yun S.</div>
+            <div class="p-venue"><span class="venue">arXiv</span> <span class="year">2025</span> <span class="tag tag-align">alignment</span> <span class="tag tag-rl">RL</span></div>
+          </div>
+
+          <div class="paper">
+            <div class="p-title"><a href="https://mcgrad.dev/">MCGrad: Multicalibration at Web Scale</a></div>
+            <div class="p-authors">Perini L., Haimovich D., Linder F., Tax N., Karamshuk D., Vojnović M. et al.</div>
+            <div class="p-venue"><span class="venue">ACM KDD</span> <span class="year">2026</span> <span class="tag tag-opt">optimisation</span> <span class="tag tag-active">active learning</span></div>
+          </div>
+
+          <div class="paper">
+            <div class="p-title"><a href="https://pubsonline.informs.org/doi/abs/10.1287/ijoo.2024.0039">Sketching Stochastic Valuation Functions</a></div>
+            <div class="p-authors">Vojnović M. and Wang Y.</div>
+            <div class="p-venue"><span class="venue">INFORMS Journal on Optimization</span> <span class="year">2026</span> <span class="tag tag-opt">optimisation</span></div>
+          </div>
+
+          <div class="paper">
+            <div class="p-title">Oracle-Efficient Combinatorial Semi-Bandits</div>
+            <div class="p-authors">Kim J., Vojnović M. and Oh M.</div>
+            <div class="p-venue"><span class="venue">NeurIPS</span> <span class="year">2025</span> <span class="tag tag-bandit">bandits</span></div>
+          </div>
+
+          <div class="paper">
+            <div class="p-title"><a href="https://arxiv.org/abs/2312.13927">On the Convergence of Loss and Uncertainty-based Active Learning Algorithms</a></div>
+            <div class="p-authors">Haimovich D., Karamshuk D., Linder F., Tax N., and Vojnović M.</div>
+            <div class="p-venue"><span class="venue">NeurIPS</span> <span class="year">2024</span> <span class="tag tag-active">active learning</span></div>
+          </div>
+
+          <div class="paper">
+            <div class="p-title"><a href="https://arxiv.org/abs/2404.14202">An Adaptive Approach for Infinitely Many-armed Bandits under Generalized Rotting Constraints</a></div>
+            <div class="p-authors">Kim J., Vojnović M. and Yun S.</div>
+            <div class="p-venue"><span class="venue">NeurIPS</span> <span class="year">2024</span> <span class="tag tag-bandit">bandits</span></div>
+          </div>
+
+          <div class="paper">
+            <div class="p-title"><a href="https://openreview.net/forum?id=eMHn77ZKOp">Combinatorial Bandits for Maximum Value Reward Function under Value-Index Feedback</a></div>
+            <div class="p-authors">Wang Y., Chen W. and Vojnović M.</div>
+            <div class="p-venue"><span class="venue">ICLR</span> <span class="year">2024</span> <span class="tag tag-bandit">bandits</span></div>
+          </div>
+
+          <div class="paper">
+            <div class="p-title"><a href="https://proceedings.mlr.press/v202/yi23a.html">Doubly Adversarial Federated Bandits</a></div>
+            <div class="p-authors">Yi J. and Vojnović M.</div>
+            <div class="p-venue"><span class="venue">ICML</span> <span class="year">2023</span> <span class="tag tag-bandit">bandits</span> <span class="tag tag-rl">federated learning</span></div>
+          </div>
+
+          <hr class="paper-divider" />
+          <div class="older-label">Earlier work</div>
+
+          <div class="paper">
+            <div class="p-title"><a href="https://proceedings.neurips.cc/paper/2017/hash/6c340f25839e6acdc73414517203f5f0-Abstract.html">QSGD: Communication-Efficient SGD via Gradient Quantization and Encoding</a></div>
+            <div class="p-authors">Alistarh D., Grubic D., Li J., Tomioka R. and Vojnović M.</div>
+            <div class="p-venue"><span class="venue">NeurIPS</span> <span class="year">2017</span> <span class="tag tag-opt">optimisation</span> <span class="tag tag-rl">distributed training</span></div>
+          </div>
+
+          <div class="papers-footer">
+            <a href="https://scholar.google.co.uk/citations?user=z4JhSBwAAAAJ&hl=en" target="_blank">Full publication list on Google Scholar →</a>
+            <span class="dot-sep">·</span>
+            <a href="#">Book: <em>Contest Theory: Incentive Mechanisms and Ranking Methods</em>, Cambridge University Press, 2016 →</a>
+          </div>
+        </section>
+
+        <!-- RESEARCH IN PRACTICE -->
+        <section class="section">
+          <h2>Research in practice</h2>
+          <div class="transfer-grid">
+            <div class="transfer-card"><div class="tc-name">MCGrad</div><div class="tc-org">Meta, 2025</div></div>
+            <div class="transfer-card"><div class="tc-name">Popularity Prediction</div><div class="tc-org">Facebook, 2021</div></div>
+            <div class="transfer-card"><div class="tc-name">Stream Optimiser</div><div class="tc-org">Bing, 2014</div></div>
+            <div class="transfer-card"><div class="tc-name">Tag Recommendation</div><div class="tc-org">Microsoft Live, 2008</div></div>
+            <div class="transfer-card"><div class="tc-name">4CP Protocol</div><div class="tc-org">MS Vista, 2006</div></div>
+          </div>
+        </section>
+
+        <!-- TEACHING + AWARDS -->
+        <div class="two-col">
+          <section class="section">
+            <h2>Teaching</h2>
+            <div class="course-row">
+              <span class="c-code">ST510</span>
+              <span class="c-name"><a href="https://www.lse.ac.uk/resources/calendar2024-2025/courseGuides/ST/2024_ST510.htm">Foundations of Machine Learning</a></span>
+              <span class="c-level">PhD</span>
+            </div>
+            <div class="past-label">Previously taught</div>
+            <div class="course-row past"><span class="c-code">ST456</span><span class="c-name">Deep Learning</span><span class="c-level">MSc</span></div>
+            <div class="course-row past"><span class="c-code">ST449</span><span class="c-name">Artificial Intelligence and Deep Learning</span><span class="c-level">MSc</span></div>
+            <div class="course-row past"><span class="c-code">ST443</span><span class="c-name">Machine Learning and Data Mining</span><span class="c-level">MSc</span></div>
+            <div class="course-row past"><span class="c-code">ST446</span><span class="c-name">Distributed Computing for Big Data</span><span class="c-level">MSc</span></div>
+            <div class="course-row past"><span class="c-code">ST445</span><span class="c-name">Managing and Visualising Data</span><span class="c-level">MSc</span></div>
+          </section>
+
+          <section class="section">
+            <h2>Awards (selected)</h2>
+            <div class="award-row"><span class="a-yr">2022</span><span class="a-name">LSE Excellence in Education Award</span></div>
+            <div class="award-row"><span class="a-yr">2020</span><span class="a-name">Facebook Research Award – Systems for ML</span></div>
+            <div class="award-row"><span class="a-yr">2018</span><span class="a-name">Criteo Faculty Research Award</span></div>
+            <div class="award-row"><span class="a-yr">2010</span><span class="a-name">ACM SIGMETRICS Rising Star Researcher</span></div>
+            <div class="award-row"><span class="a-yr">2005</span><span class="a-name">ERCIM Cor Baayen Award</span></div>
+            <div class="award-row"><span class="a-yr">2005</span><span class="a-name">IEEE INFOCOM Best Paper Award</span></div>
+            <div class="award-row"><span class="a-yr">2005</span><span class="a-name">ACM SIGMETRICS Best Paper Award</span></div>
+          </section>
+        </div>
+
+        <hr class="section-divider" />
+
+        <!-- EXPERIENCE -->
+        <section class="section">
+          <h2>Experience</h2>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">London School of Economics</div><div class="e-role">Professor of Data Science · Head of Department of Statistics</div></div><span class="e-date">Oct 2016–</span></div>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">Meta — Central Applied Science</div><div class="e-role">Visiting Scientist</div></div><span class="e-date">Jun 2019–</span></div>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">KAIST Graduate School of AI, Seoul</div><div class="e-role">Visiting Researcher</div></div><span class="e-date">Jan–Feb 2024</span></div>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">Microsoft Research</div><div class="e-role">Senior Researcher — Machine Learning &amp; Systems</div></div><span class="e-date">2004–2016</span></div>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">University of Cambridge, Statistical Laboratory</div><div class="e-role">Affiliated Lecturer</div></div><span class="e-date">2014–2016</span></div>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">EPFL</div><div class="e-role">Ph.D., Technical Sciences</div></div><span class="e-date">2003</span></div>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="pg-footer">
+      Department of Statistics · London School of Economics &nbsp;·&nbsp; Last updated April 2026
+    </footer>
+  </div>
+</body>
+</html>
