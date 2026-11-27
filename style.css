@@ -1,6 +1,6 @@
 /* ============================================================
-   Milan Vojnovic — Personal Academic Page
-   style.css
+   Milan Vojnović — Personal Academic Page
+   style.css  (revised November 2026)
    ============================================================ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -115,6 +115,15 @@ h2 {
   margin-bottom: 14px;
 }
 
+/* Body paragraphs directly inside a section
+   (Research in production, Earlier research) */
+.section > p {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: #2a2a2a;
+  margin-bottom: 10px;
+}
+
 /* ── Bio ── */
 .bio {
   font-size: 13.5px;
@@ -124,6 +133,30 @@ h2 {
 }
 
 .bio:last-child { margin-bottom: 0; }
+
+/* ── Current research blocks ── */
+.research-block { margin-bottom: 20px; }
+.research-block:last-child { margin-bottom: 0; }
+
+h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.research-question {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.research-block p:not(.research-question) {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: #2a2a2a;
+}
 
 /* ── Papers ── */
 .paper {
@@ -163,6 +196,13 @@ h2 {
 .p-venue .venue { font-weight: 600; color: #222; }
 .p-venue .year  { color: #888; }
 
+.p-description {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #444;
+  margin-top: 4px;
+}
+
 .tag {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 10px;
@@ -175,6 +215,9 @@ h2 {
 .tag-opt    { background: #edf7f2; color: #2d7a5a; }
 .tag-bandit { background: #fdf3ee; color: #8a4a2a; }
 .tag-active { background: #fafaed; color: #7a6a2a; }
+.tag-dist   { background: #eef6f8; color: #2a6a7a; }
+.tag-book   { background: #f3f3f3; color: #555; }
+.tag-award  { background: #1a3a5c; color: #fff; font-weight: 600; }
 
 .paper-divider {
   border: none;
@@ -204,19 +247,18 @@ h2 {
 /* ── Technology transfer ── */
 .transfer-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 220px));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
+  margin-top: 6px;
 }
 
 .transfer-card {
   background: #f7f9fc;
   border-radius: 5px;
   padding: 8px 10px;
-  opacity: 0.6;
 }
 
 .transfer-card--new {
-  opacity: 1;
   background: #f7f9fc;
 }
 
@@ -241,11 +283,18 @@ h2 {
   margin-top: 2px;
 }
 
+.tc-year {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 10.5px;
+  color: #bbb;
+}
+
 .tc-note {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 10px;
-  color: #2d7a5a;
-  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 4px;
 }
 
 .tc-note a {
@@ -254,6 +303,33 @@ h2 {
 }
 
 .tc-note a:hover { text-decoration: underline; }
+
+/* ── Students and postdocs / Service ── */
+.group-row,
+.svc-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.group-row:last-child,
+.svc-row:last-child { border-bottom: none; }
+
+.g-label,
+.s-label {
+  font-size: 11px;
+  color: #888;
+  padding-top: 1px;
+}
+
+.g-person { display: block; }
+.g-where  { color: #888; }
 
 /* ── Two-column layout ── */
 .two-col {
@@ -292,6 +368,14 @@ h2 {
   margin: 12px 0 4px;
 }
 
+.past-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #666;
+  margin-top: 10px;
+}
+
 /* ── Awards ── */
 .award-row {
   display: flex;
@@ -313,7 +397,7 @@ h2 {
   margin: 0 0 28px;
 }
 
-/* ── Experience ── */
+/* ── Experience and education ── */
 .exp-row {
   display: flex;
   gap: 10px;
@@ -326,6 +410,7 @@ h2 {
 .exp-left { flex: 1; }
 .e-org  { font-size: 12.5px; font-weight: 600; color: #1a1a1a; }
 .e-role { font-size: 12px; color: #666; }
+.e-sub  { font-size: 11px; color: #999; margin-top: 1px; }
 .e-date { font-size: 11px; color: #aaa; margin-left: auto; white-space: nowrap; padding-top: 1px; }
 
 /* ── Footer ── */
@@ -363,4 +448,7 @@ h2 {
 
 @media (max-width: 480px) {
   .transfer-grid { grid-template-columns: 1fr; }
+
+  .group-row,
+  .svc-row { grid-template-columns: 1fr; gap: 2px; }
 }
