@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Milan Vojnovic | LSE Statistics</title>
+  <title>Milan Vojnović | LSE Statistics</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,16 +12,17 @@
 
       <!-- SIDEBAR -->
       <aside class="sidebar">
-        <img class="av" src="Milan-2985.jpg" alt="Milan Vojnovic" />
-        <div class="sb-name">Milan Vojnovic</div>
+        <img class="av" src="Milan-2985.jpg" alt="Milan Vojnović" />
+        <div class="sb-name">Milan Vojnović</div>
         <div class="sb-role">Professor of Data Science</div>
-        <div class="sb-role">Head of Department</div>
-        <div class="sb-sub">Department of Statistics, LSE</div>
+        <div class="sb-role">Head of Department of Statistics</div>
+        <div class="sb-sub">London School of Economics</div>
         <ul class="sb-links">
           <li><a href="about.html">Short bio</a></li>
           <li><a href="CV-MV.pdf">Curriculum vitae</a></li>
           <li><a href="https://scholar.google.co.uk/citations?user=z4JhSBwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
           <li><a href="https://www.lse.ac.uk/people/milan-vojnovic" target="_blank" rel="noopener">LSE profile</a></li>
+          <li><a href="https://doi.org/10.1017/CBO9781139519366" target="_blank" rel="noopener">Book: <em>Contest Theory</em></a></li>
         </ul>
         <div class="contact">
           Columbia House, Office 8.04<br>
@@ -37,8 +38,8 @@
 
         <!-- INTRO -->
         <section class="section">
-          <p class="bio">I am Professor of Data Science and Head of the <a href="https://www.lse.ac.uk/statistics">Department of Statistics</a> at the London School of Economics. 
-            My work is focused on developing algorithms and mathematical theory for reliable and efficient machine learning. My recent research focuses on <strong>multicalibration, multi-agent systems, reinforcement learning, sequential decision-making, active learning, and scalable optimisation</strong>, with applications to large-scale AI systems. I am interested in problems where learning is constrained by limited information, computation, or feedback, and where the behaviour of the system or its users can affect what can be learned.
+          <p class="bio">Milan Vojnović is Professor of Data Science and Head of the <a href="https://www.lse.ac.uk/statistics">Department of Statistics</a> at the London School of Economics. He develops algorithms, with supporting theory, for reliable and efficient machine learning in large-scale AI systems. Before joining LSE, he spent twelve years at Microsoft Research, and between 2019 and 2026 he was a Visiting Scientist at Meta, where joint work has been deployed in production.</p>
+          <p class="bio">His recent research covers <strong>post-training and alignment</strong> of language models, including what reinforcement-learning methods such as GRPO actually optimise and how preferences are aggregated when multiple agents learn from one another; <strong>reliability and calibration</strong> of model predictions across many overlapping subpopulations; <strong>learning from limited feedback</strong>, where information is costly to acquire, through active learning, bandits, and sequential decision-making; and <strong>scalable optimisation</strong> for distributed and communication-efficient training. A common thread is understanding what can be learned when information, computation, or feedback is constrained, and when the behaviour of the system or its users shapes the data it learns from.</p>
         </section>
 
         <!-- RESEARCH -->
@@ -46,33 +47,67 @@
           <h2>Current research</h2>
 
           <div class="research-block">
-            <h3>Reliable machine learning</h3>
-            <p class="research-question"><em>How can we make predictions reliable across many different populations?</em></p>
-            <p>Multicalibration provides a way to require predictive reliability not only on average, but across many overlapping subpopulations.</p>
-            <p>Recent work on <a href="https://mcgrad.dev/" target="_blank" rel="noopener"><strong>MCGrad</strong></a> develops a scalable approach to multicalibration that automatically identifies populations where calibration can be improved. The method has been deployed across hundreds of production models at Meta.</p>
-            <p>A companion paper develops the mathematical theory of multicalibration gradient boosting, establishing convergence guarantees for the MCGrad procedure, including faster rates under additional smoothness assumptions. The paper has been accepted at NeurIPS 2026.</p>
+            <h3>Post-training and alignment</h3>
+            <p class="research-question"><em>What do alignment methods actually optimise, and whose preferences do they reflect?</em></p>
+            <p>Reinforcement-learning methods such as GRPO are widely used to post-train language models, but what they optimise is not always explicit. <a href="https://arxiv.org/abs/2502.18548" target="_blank" rel="noopener"><em>What is the Alignment Objective of GRPO?</em></a> characterises the objective that Group Relative Policy Optimisation optimises and how it relates to the reading of GRPO as an alignment method. <a href="https://arxiv.org/abs/2611.30941" target="_blank" rel="noopener"><em>Aggregation Rules Induced by KL-Regularised Preference Dynamics on Networks</em></a> studies agents that each update a KL-regularised policy, as in RLHF or Nash learning from human feedback (NLHF), while observing one another, and identifies the preference-aggregation rule this collectively produces, depending on how agents combine what they observe.</p>
           </div>
 
           <div class="research-block">
-            <h3>Reinforcement learning and alignment</h3>
-            <p class="research-question"><em>What objective are modern reinforcement-learning algorithms actually optimising?</em></p>
-            <p>Recent work studies the mathematical foundations of reinforcement-learning methods used in the post-training of language models.</p> 
-            In <a href="https://arxiv.org/abs/2502.18548" target="_blank" rel="noopener"><em>What is the Alignment Objective of GRPO?</em></a>, we analyse the objective optimised by Group Relative Policy Optimisation and clarify its relationship to its interpretation as an alignment method.
-            In <a href="https://arxiv.org/abs/2611.30941" target="_blank" rel="noopener"><em>Aggregation Rules Induced by KL-Regularised Preference Dynamics on Networks</em></a>, we identify what aggregation of preferences arises depending on how agents aggregate information observed from other agents in a RLHF or NLHF-style policy optimisation.</p>
+            <h3>Reliability and calibration</h3>
+            <p class="research-question"><em>How can predictions be made reliable across many different populations?</em></p>
+            <p>A model can be well calibrated on average while being systematically over- or under-confident for particular groups of users or inputs, which matters whenever a model’s confidence is used to make decisions. Multicalibration asks for calibration across many overlapping subpopulations at once. <a href="https://arxiv.org/abs/2509.19884" target="_blank" rel="noopener"><strong>MCGrad</strong></a> makes this practical at scale: it automatically finds the subpopulations where calibration can be improved and has been deployed across hundreds of production models at Meta (code at <a href="https://mcgrad.dev/" target="_blank" rel="noopener">mcgrad.dev</a>). A companion paper, <a href="https://arxiv.org/abs/2602.06773" target="_blank" rel="noopener"><em>On the Convergence of Multicalibration Gradient Boosting</em></a>, establishes when and how fast the procedure converges.</p>
           </div>
 
           <div class="research-block">
-            <h3>Learning with limited feedback</h3>
+            <h3>Learning from limited feedback</h3>
             <p class="research-question"><em>How should an algorithm learn when information is costly or incomplete?</em></p>
-            <p>Research on bandits, active learning, and sequential decision-making studies how an algorithm can decide what information to acquire while simultaneously making predictions or taking actions.</p>
-            <p>This includes work on combinatorial and infinitely-many-armed bandits, active learning under uncertainty, and algorithms with strong statistical guarantees.</p>
+            <p>Labels, human judgements, and experiments are expensive, so deciding what to query is often as important as how to learn from it. This work approaches the question through bandits, active learning, and sequential decision-making. <a href="https://arxiv.org/abs/2510.21431" target="_blank" rel="noopener"><em>Oracle-Efficient Combinatorial Semi-Bandits</em></a> develops combinatorial semi-bandit algorithms that reduce the number of calls to the optimisation oracle while maintaining regret guarantees. <a href="https://arxiv.org/abs/2312.13927" target="_blank" rel="noopener"><em>On the Convergence of Loss and Uncertainty-based Active Learning Algorithms</em></a> analyses active-learning methods that select training points by their loss or predictive uncertainty. Related work studies infinitely-many-armed bandits whose rewards deteriorate as they are played (ICML 2022; NeurIPS 2024).</p>
           </div>
 
           <div class="research-block">
-            <h3>Efficient learning and optimisation</h3>
+            <h3>Scalable optimisation</h3>
             <p class="research-question"><em>How can machine learning scale when computation and communication are constrained?</em></p>
-            <p>Research in optimisation develops methods that exploit structure to reduce the computational and communication costs of learning, including distributed optimisation, stochastic optimisation, low-rank estimation, and communication-efficient learning.</p>
-            <p>Earlier work on <a href="https://proceedings.neurips.cc/paper/2017/hash/6c340f25839e6acdc73414517203f5f0-Abstract.html" target="_blank" rel="noopener"><strong>QSGD</strong></a> introduced a method for reducing communication in distributed stochastic gradient descent while retaining convergence guarantees.</p>
+            <p>Learning at scale is limited by compute, memory, and communication, and this work develops methods that exploit problem structure to reduce these costs. <a href="https://arxiv.org/abs/2506.03074" target="_blank" rel="noopener"><em>GL-LowPopArt</em></a> exploits low-rank structure to give a nearly instance-optimal estimator for generalised low-rank trace regression, and <a href="https://pubsonline.informs.org/doi/abs/10.1287/ijoo.2024.0039" target="_blank" rel="noopener"><em>Sketching Stochastic Valuation Functions</em></a> studies how compact sketches of stochastic valuation functions support efficient optimisation. This line of work goes back to <a href="https://proceedings.neurips.cc/paper/2017/hash/6c340f25839e6acdc73414517203f5f0-Abstract.html" target="_blank" rel="noopener"><strong>QSGD</strong></a>, which introduced gradient quantisation to cut communication in distributed training.</p>
+          </div>
+        </section>
+
+        <!-- RESEARCH IN PRODUCTION -->
+        <section class="section">
+          <h2>Research in production</h2>
+          <p>Several of his methods have been transferred into large-scale industry systems, at Microsoft and at Meta. He spent twelve years at Microsoft Research, most recently as Senior Researcher, and held three Visiting Scientist appointments at Meta between 2019 and 2026, in the Central Applied Science and Core Data Science teams. He is a named inventor on twelve granted US patents.</p>
+          <p>His work focuses on problems that come from the constraints of real systems: limited feedback, compute and communication budgets, heterogeneous user populations, and changing data.</p>
+
+          <div class="transfer-grid">
+            <div class="transfer-card">
+              <div class="tc-name">MCGrad</div>
+              <div class="tc-org">Meta</div>
+              <div class="tc-year">2025</div>
+              <div class="tc-note">Multicalibration across hundreds of production models. <a href="https://mcgrad.dev/" target="_blank" rel="noopener">mcgrad.dev</a></div>
+            </div>
+            <div class="transfer-card">
+              <div class="tc-name">Popularity Prediction</div>
+              <div class="tc-org">Facebook</div>
+              <div class="tc-year">2021</div>
+              <div class="tc-note">Prediction methods for a community integrity platform.</div>
+            </div>
+            <div class="transfer-card">
+              <div class="tc-name">Network Stream Optimiser</div>
+              <div class="tc-org">Microsoft Bing</div>
+              <div class="tc-year">2014</div>
+              <div class="tc-note">Optimisation for Bing’s stream-processing platform.</div>
+            </div>
+            <div class="transfer-card">
+              <div class="tc-name">Tag Recommendation</div>
+              <div class="tc-org">Microsoft Live</div>
+              <div class="tc-year">2008</div>
+              <div class="tc-note">Ranking and suggesting popular tags.</div>
+            </div>
+            <div class="transfer-card">
+              <div class="tc-name">4CP</div>
+              <div class="tc-org">Windows Vista (beta)</div>
+              <div class="tc-year">2006</div>
+              <div class="tc-note">Background transport control protocol for bulk transfers.</div>
+            </div>
           </div>
         </section>
 
@@ -82,23 +117,30 @@
 
           <div class="paper paper-featured">
             <div class="p-title"><a href="https://arxiv.org/abs/2509.19884" target="_blank" rel="noopener">MCGrad: Multicalibration at Web Scale</a></div>
-            <div class="p-authors">Perini L., Haimovich D., Linder F., Tax N., Karamshuk D., Vojnović M. et al.</div>
-            <div class="p-venue"><span class="venue">ACM KDD</span> <span class="year">2026</span></div>
-            <p class="p-description">A scalable approach to multicalibration for large machine-learning systems. The method automatically discovers subpopulations for which calibration can be improved and has been deployed across hundreds of production models at Meta.</p>
+            <div class="p-authors">Perini L., Haimovich D., Linder F., Tax N., Karamshuk D., Vojnović M., Okati N. and Apostolopoulos P.A.</div>
+            <div class="p-venue"><span class="venue">ACM KDD, Applied Data Science Track</span> <span class="year">2026</span> <span class="tag tag-award">Best Paper Award</span></div>
+            <p class="p-description">Scalable multicalibration, deployed across hundreds of production models at Meta.</p>
           </div>
 
           <div class="paper paper-featured">
             <div class="p-title"><a href="https://arxiv.org/abs/2602.06773" target="_blank" rel="noopener">On the Convergence of Multicalibration Gradient Boosting</a></div>
-            <div class="p-authors">Haimovich D., Karamshuk D., Linder F., Tax N., and Vojnović M.</div>
+            <div class="p-authors">Haimovich D., Linder F., Perini L., Tax N. and Vojnović M.</div>
             <div class="p-venue"><span class="venue">NeurIPS</span> <span class="year">2026</span></div>
-            <p class="p-description">A theoretical analysis of multicalibration gradient boosting, establishing convergence guarantees for the iterative procedure underlying MCGrad, including faster rates under additional smoothness assumptions.</p>
+            <p class="p-description">Convergence guarantees for the gradient-boosting procedure behind MCGrad, with faster rates under smoothness.</p>
           </div>
 
           <div class="paper paper-featured">
             <div class="p-title"><a href="https://arxiv.org/abs/2502.18548" target="_blank" rel="noopener">What is the Alignment Objective of GRPO?</a></div>
             <div class="p-authors">Vojnović M. and Yun S.</div>
             <div class="p-venue"><span class="venue">arXiv</span> <span class="year">2025</span> <span class="tag tag-align">alignment</span> <span class="tag tag-rl">RL</span></div>
-            <p class="p-description">An analysis of the objective optimised by Group Relative Policy Optimisation and its implications for understanding alignment through reinforcement learning.</p>
+            <p class="p-description">The objective GRPO optimises, and what it implies for GRPO as an alignment method.</p>
+          </div>
+
+          <div class="paper paper-featured">
+            <div class="p-title"><a href="https://arxiv.org/abs/2611.30941" target="_blank" rel="noopener">Aggregation Rules Induced by KL-Regularised Preference Dynamics on Networks</a></div>
+            <div class="p-authors">Vojnović M.</div>
+            <div class="p-venue"><span class="venue">arXiv</span> <span class="year">2026</span> <span class="tag tag-align">alignment</span> <span class="tag tag-rl">RL</span></div>
+            <p class="p-description">The preference-aggregation rule induced when agents run KL-regularised policy updates while observing one another.</p>
           </div>
 
           <div class="paper">
@@ -121,47 +163,61 @@
 
           <div class="paper">
             <div class="p-title"><a href="https://arxiv.org/abs/2312.13927" target="_blank" rel="noopener">On the Convergence of Loss and Uncertainty-based Active Learning Algorithms</a></div>
-            <div class="p-authors">Haimovich D., Karamshuk D., Linder F., Tax N., and Vojnović M.</div>
+            <div class="p-authors">Haimovich D., Karamshuk D., Linder F., Tax N. and Vojnović M.</div>
             <div class="p-venue"><span class="venue">NeurIPS</span> <span class="year">2024</span> <span class="tag tag-active">active learning</span></div>
           </div>
 
           <div class="papers-footer">
             <a href="https://scholar.google.co.uk/citations?user=z4JhSBwAAAAJ&hl=en" target="_blank" rel="noopener">Full publication list on Google Scholar →</a>
-            <span class="dot-sep">·</span>
-            <a href="#">Book: <em>Contest Theory: Incentive Mechanisms and Ranking Methods</em>, Cambridge University Press, 2016 →</a>
-          </div>
-        </section>
-
-        <!-- THEORY AND SYSTEMS -->
-        <section class="section">
-          <h2>Theory and systems</h2>
-          <p>A central part of my research is connecting <strong>mathematical theory with large-scale machine-learning systems</strong>.</p>
-          <p>My research has included industry work at <strong>Meta and Microsoft</strong>, spanning calibration, ranking, prediction, distributed learning, and optimisation.</p>
-          <p>I am particularly interested in problems where theoretical guarantees meet the constraints of real systems: limited feedback, computational budgets, communication costs, heterogeneous populations, and changing environments.</p>
-
-          <div class="transfer-grid">
-            <div class="transfer-card transfer-card--new">
-              <div class="tc-name">MCGrad</div>
-              <div class="tc-org">Meta</div>
-              <div class="tc-note"><a href="https://mcgrad.dev/" target="_blank" rel="noopener">mcgrad.dev →</a></div>
-            </div>
-            <div class="transfer-card transfer-card--new">
-              <div class="tc-name">Popularity Prediction</div>
-              <div class="tc-org">Facebook</div>
-            </div>
           </div>
         </section>
 
         <!-- EARLIER RESEARCH -->
         <section class="section">
           <h2>Earlier research</h2>
-          <p>Earlier work includes distributed computing, consensus algorithms, information dissemination, ranking and inference, game theory, contests, and crowdsourcing.</p>
+          <p>Earlier work spans networking and distributed systems, consensus and information dissemination, large-scale graph partitioning, game theory, contests, and crowdsourcing. A long-running thread is inferring rankings from comparisons, from SerialRank (NeurIPS 2014) and generalised Thurstone choice models (ICML 2016) to fast algorithms for Bradley–Terry models (AISTATS 2020; Operations Research 2022), the same models that underpin reward learning from human preferences.</p>
           <p>These projects share a common theme with current research: understanding how to make decisions and learn from data when information is incomplete and other agents may influence the system.</p>
+
+          <div class="paper paper-featured">
+            <div class="p-title"><a href="https://doi.org/10.1017/CBO9781139519366" target="_blank" rel="noopener">Contest Theory: Incentive Mechanisms and Ranking Methods</a></div>
+            <div class="p-authors">Vojnović M.</div>
+            <div class="p-venue"><span class="venue">Cambridge University Press</span> <span class="year">2016</span> <span class="tag tag-book">book</span></div>
+            <p class="p-description">A unified treatment of contest design across economics, computer science and statistics, including rating systems and methods for inferring rankings from pairwise comparisons — foundations that underpin today’s preference learning and model evaluation.</p>
+          </div>
 
           <div class="paper">
             <div class="p-title"><a href="https://proceedings.neurips.cc/paper/2017/hash/6c340f25839e6acdc73414517203f5f0-Abstract.html" target="_blank" rel="noopener">QSGD: Communication-Efficient SGD via Gradient Quantization and Encoding</a></div>
             <div class="p-authors">Alistarh D., Grubic D., Li J., Tomioka R. and Vojnović M.</div>
-            <div class="p-venue"><span class="venue">NeurIPS</span> <span class="year">2017</span> <span class="tag tag-opt">optimisation</span> <span class="tag tag-rl">distributed training</span></div>
+            <div class="p-venue"><span class="venue">NeurIPS (Spotlight)</span> <span class="year">2017</span> <span class="tag tag-opt">optimisation</span> <span class="tag tag-dist">distributed training</span></div>
+          </div>
+        </section>
+
+        <!-- SUPERVISION -->
+        <section class="section">
+          <h2>Students and postdocs</h2>
+          <div class="group-row">
+            <div class="g-label">PhD students</div>
+            <div><span class="g-person">Hitesh Gudwani (2025–)</span></div>
+          </div>
+          <div class="group-row">
+            <div class="g-label">Former PhD students</div>
+            <div>
+              <span class="g-person">Jialin Yi (2023) <span class="g-where">— Citadel</span></span>
+              <span class="g-person">Kaifang Zhou (2023) <span class="g-where">— LSE Fellow, Department of Statistics, LSE</span></span>
+              <span class="g-person">Yiliu Wang (2022) <span class="g-where">— Researcher, Allen Institute</span></span>
+            </div>
+          </div>
+          <div class="group-row">
+            <div class="g-label">Former postdocs</div>
+            <div>
+              <span class="g-person">Dan Alistarh <span class="g-where">— Professor, ISTA</span></span>
+              <span class="g-person">Se-Young Yun <span class="g-where">— Associate Professor, KAIST</span></span>
+              <span class="g-person">Dabeen Lee <span class="g-where">— Assistant Professor, Seoul National University</span></span>
+            </div>
+          </div>
+          <div class="group-row">
+            <div class="g-label">Research interns</div>
+            <div>28 interns hosted, most at Microsoft Research, including Vasilis Syrgkanis, Gautam Kamath, Jerry Li, Charalampos Tsourakakis, and Zhenming Liu.</div>
           </div>
         </section>
 
@@ -174,12 +230,7 @@
               <span class="c-name"><a href="https://www.lse.ac.uk/resources/calendar2024-2025/courseGuides/ST/2024_ST510.htm">Foundations of Machine Learning</a></span>
               <span class="c-level">PhD</span>
             </div>
-            <div class="past-label">Previously taught</div>
-            <div class="course-row past"><span class="c-code">ST456</span><span class="c-name">Deep Learning</span><span class="c-level">MSc</span></div>
-            <div class="course-row past"><span class="c-code">ST449</span><span class="c-name">Artificial Intelligence and Deep Learning</span><span class="c-level">MSc</span></div>
-            <div class="course-row past"><span class="c-code">ST443</span><span class="c-name">Machine Learning and Data Mining</span><span class="c-level">MSc</span></div>
-            <div class="course-row past"><span class="c-code">ST446</span><span class="c-name">Distributed Computing for Big Data</span><span class="c-level">MSc</span></div>
-            <div class="course-row past"><span class="c-code">ST445</span><span class="c-name">Managing and Visualising Data</span><span class="c-level">MSc</span></div>
+            <p class="past-text">Previously at LSE: Machine Learning and Data Mining, Deep Learning (including transformers and training language models), Artificial Intelligence and Deep Learning (including reinforcement learning), Distributed Computing for Big Data, and Managing and Visualising Data (MSc Data Science). At Cambridge: Contest Theory, Part III of the Mathematical Tripos (2013–2015).</p>
           </section>
 
           <section class="section">
@@ -188,32 +239,42 @@
             <div class="award-row"><span class="a-yr">2022</span><span class="a-name">LSE Excellence in Education Award</span></div>
             <div class="award-row"><span class="a-yr">2020</span><span class="a-name">Facebook Research Award – Systems for ML</span></div>
             <div class="award-row"><span class="a-yr">2018</span><span class="a-name">Criteo Faculty Research Award</span></div>
-            <div class="award-row"><span class="a-yr">2018</span><span class="a-name">Huawei Technologies Research Grant</span></div>
-            <div class="award-row"><span class="a-yr">2010</span><span class="a-name">ACM SIGMETRICS Rising Star Researcher</span></div>
+            <div class="award-row"><span class="a-yr">2015</span><span class="a-name">Microsoft Achievement Award</span></div>
             <div class="award-row"><span class="a-yr">2005</span><span class="a-name">ERCIM Cor Baayen Award</span></div>
             <div class="award-row"><span class="a-yr">2005</span><span class="a-name">IEEE INFOCOM Best Paper Award</span></div>
             <div class="award-row"><span class="a-yr">2005</span><span class="a-name">ACM SIGMETRICS Best Paper Award</span></div>
           </section>
         </div>
 
+        <!-- SERVICE -->
+        <section class="section">
+          <h2>Service</h2>
+          <div class="svc-row"><div class="s-label">Award committees</div><div>ACM SIGMETRICS Test of Time Award Committee (2025)</div></div>
+          <div class="svc-row"><div class="s-label">Leadership</div><div>Senior Leadership Team, Microsoft Research Algorithms Virtual Center (2013–2016)</div></div>
+          <div class="svc-row"><div class="s-label">PhD examination</div><div>Thesis committees at Oxford, UCL, EPFL, École Polytechnique, ENS Paris, MPI for Software Systems, London Business School, and LSE</div></div>
+          <div class="svc-row"><div class="s-label">Workshops organised</div><div>Machine Learning and User Decision Making, Paris (2019); Data Science Theory and Practice, LSE (2018)</div></div>
+          <div class="svc-row"><div class="s-label">Programme committees</div><div>Area Vice-Chair, IEEE ICDE; ACM SIGMETRICS, ACM EC, ACM SIGCOMM, IEEE INFOCOM, and WWW</div></div>
+        </section>
+
         <hr class="section-divider" />
 
-        <!-- EXPERIENCE -->
+        <!-- EXPERIENCE AND EDUCATION -->
         <section class="section">
-          <h2>Experience</h2>
-          <div class="exp-row"><div class="exp-left"><div class="e-org">London School of Economics</div><div class="e-role">Professor of Data Science · Head of Department of Statistics</div></div><span class="e-date">Oct 2016–</span></div>
-          <div class="exp-row"><div class="exp-left"><div class="e-org">Meta — Central Applied Science</div><div class="e-role">Visiting Scientist</div></div><span class="e-date">Jun 2019–June 2026</span></div>
-          <div class="exp-row"><div class="exp-left"><div class="e-org">KAIST Graduate School of AI, Seoul</div><div class="e-role">Visiting Researcher</div></div><span class="e-date">Jan–Feb 2024</span></div>
-          <div class="exp-row"><div class="exp-left"><div class="e-org">Microsoft Research</div><div class="e-role">Senior Researcher — Machine Learning &amp; Systems</div></div><span class="e-date">2004–2016</span></div>
+          <h2>Experience and education</h2>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">London School of Economics</div><div class="e-role">Head of Department of Statistics</div></div><span class="e-date">2025–</span></div>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">London School of Economics</div><div class="e-role">Professor, Chair in Data Science</div><div class="e-sub">Programme Director, MSc Data Science (2017–2022); Faculty Affiliate, LSE Data Science Institute (2024–)</div></div><span class="e-date">2016–</span></div>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">Meta — Central Applied Science / Core Data Science</div><div class="e-role">Visiting Scientist</div><div class="e-sub">Three appointments: 2019–2021, 2022–2024, 2025–2026</div></div><span class="e-date">2019–2026</span></div>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">Microsoft Research — Systems and Networking; Machine Learning and Perception</div><div class="e-role">Senior Researcher</div><div class="e-sub">Researcher (2005–2010); Associate Researcher (2004–2005)</div></div><span class="e-date">2004–2016</span></div>
           <div class="exp-row"><div class="exp-left"><div class="e-org">University of Cambridge, Statistical Laboratory</div><div class="e-role">Affiliated Lecturer</div></div><span class="e-date">2014–2016</span></div>
-          <div class="exp-row"><div class="exp-left"><div class="e-org">EPFL</div><div class="e-role">Ph.D., Technical Sciences</div></div><span class="e-date">2003</span></div>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">EPFL</div><div class="e-role">PhD, Technical Sciences</div><div class="e-sub">Nominated for the EPFL Best PhD Thesis Award</div></div><span class="e-date">2003</span></div>
+          <div class="exp-row"><div class="exp-left"><div class="e-org">University of Split</div><div class="e-role">MSc and BSc, Electrical Engineering</div></div><span class="e-date">1998, 1995</span></div>
         </section>
 
       </main>
     </div>
 
     <footer class="pg-footer">
-      Department of Statistics · London School of Economics &nbsp;·&nbsp; Last updated September 2026
+      Department of Statistics · London School of Economics &nbsp;·&nbsp; Last updated November 2026
     </footer>
   </div>
 </body>
